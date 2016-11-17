@@ -15,7 +15,7 @@ bintrayRepository := "repo"
 
 bintrayPackageLabels := Seq("sbt", "plugin", "scala")
 
-publishMavenStyle := true
+publishMavenStyle := false
 
 publishArtifact in Test := false
 
