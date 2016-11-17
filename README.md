@@ -13,7 +13,7 @@ Installation
 Add the following lines to your projects.sbt
 
     //autoplugin
-    addSbtPlugin("io.shaka" % "sbt-dist-zip" % "2")
+    addSbtPlugin("io.shaka" % "sbt-dist-zip" % "1")
 
 Usage
 
