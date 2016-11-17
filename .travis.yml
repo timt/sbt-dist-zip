@@ -1,0 +1,10 @@
+language: scala
+sudo: false
+scala:
+- 2.12.0
+jdk:
+- oraclejdk8
+env:
+  global:
+  - LIB_VERSION=$TRAVIS_BUILD_NUMBER
+script: sbt test
