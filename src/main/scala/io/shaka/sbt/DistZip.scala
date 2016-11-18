@@ -1,6 +1,6 @@
 package io.shaka.sbt
 
-import sbt.{AutoPlugin, Keys, TaskKey}
+import sbt.{AutoPlugin, Keys, Setting, TaskKey}
 
 object DistZip extends AutoPlugin{
   val distTask = TaskKey[Unit]("dist")
@@ -9,4 +9,8 @@ object DistZip extends AutoPlugin{
     println(s"The target dir is $t")
     ()
   }
+
+  override def globalSettings: Seq[Setting[_]] = super.globalSettings ++ Seq(
+    Keys.commands += distTask
+  )
 }
