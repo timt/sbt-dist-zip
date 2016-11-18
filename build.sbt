@@ -17,16 +17,14 @@ bintrayPackageLabels := Seq("sbt", "plugin", "scala")
 
 publishMavenStyle := false
 
-publishArtifact in Test := false
-
-homepage := Some(url("https://github.com/timt/naive-http"))
+homepage := Some(url("https://github.com/timt/sbt-dist-zip"))
 
 licenses +=("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0.html"))
 
 pomExtra :=
   <scm>
-    <url>git@github.com:timt/naive-http.git</url>
-    <connection>scm:git:git@github.com:timt/naive-http.git</connection>
+    <url>git@github.com:timt/sbt-dist-zip.git</url>
+    <connection>scm:git:git@github.com:timt/sbt-dist-zip.git</connection>
   </scm>
     <developers>
       <developer>
