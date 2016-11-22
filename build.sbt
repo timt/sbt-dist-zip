@@ -5,7 +5,7 @@ name := "sbt-dist-zip"
 
 organization := "io.shaka"
 
-version := Try(sys.env("LIB_VERSION")).getOrElse("1")
+version := Try(sys.env("LIB_VERSION")).getOrElse("SNAPSHOT-1")
 
 pgpPassphrase := Some(Try(sys.env("SECRET")).getOrElse("goaway").toCharArray)
 
