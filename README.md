@@ -13,13 +13,13 @@ Installation
 Add the following lines to your projects.sbt
 
     //autoplugin
-    addSbtPlugin("io.shaka" % "sbt-dist-zip" % "1")
+    addSbtPlugin("io.shaka" % "sbt-dist-zip" % "8")
 
 Usage
 
-    sbt dist
+    sbt distZip
     
-This will create the file target/[projectName].zip containing the main project artifact and and files in src/main/dist 
+This will create the file target/[projectName].zip containing the main project artifact and and files in src/main/dist
 
 Code license
 ------------
