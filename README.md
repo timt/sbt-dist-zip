@@ -13,13 +13,19 @@ Installation
 Add the following lines to your projects.sbt
 
     //autoplugin
-    addSbtPlugin("io.shaka" % "sbt-dist-zip" % "8")
+    addSbtPlugin("io.shaka" % "sbt-dist-zip" % "9")
 
 Usage
 
     sbt distZip
     
 This will create the file target/[projectName].zip containing the main project artifact and and files in src/main/dist
+
+Setting to specify an alternative src folder for the script
+    distZipScripts := "main/scripts"
+
+Setting to specify an alternative artifact file (task dependency)
+    distZipArtifactFile := sbtassembly.AssemblyKeys.assembly.value
 
 Code license
 ------------

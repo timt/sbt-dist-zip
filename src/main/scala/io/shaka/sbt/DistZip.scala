@@ -1,12 +1,6 @@
 package io.shaka.sbt
 
-import java.io.File
-
-import sbt.{AutoPlugin, Compile, Keys, Path, Scoped, settingKey, taskKey}
-import sbt.IO._
-import sbt.Path._
-import sbt.plugins.JvmPlugin
-import sbt.IO
+import sbt._
 
 object DistZip extends AutoPlugin{
 
@@ -16,16 +10,18 @@ object DistZip extends AutoPlugin{
     val distZipScripts = settingKey[String](
       "sbt-dist-zip scripts directory - defaults to src/main/dist")
     val distZip = taskKey[Unit]("Create a distribution zip file")
+    val distZipArtifactFile = taskKey[File]("sbt-dist-zip task that produces artifact that is to be included in zip")
   }
 
   import autoImport._
 
   override lazy val projectSettings = Seq(
+    distZipArtifactFile := (Keys.packageBin in Compile).value,
     distZipScripts := "main/dist",
     distZip := {
       val distFilesSrcDir = Keys.sourceDirectory.value / distZipScripts.value
       val targetDir = Keys.target.value
-      val jar = (Keys.packageBin in Compile).value
+      val jar = distZipArtifactFile.value
       val distTarget = targetDir / "dist"
       val projectName = Keys.name.value
 
