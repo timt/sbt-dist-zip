@@ -7,8 +7,6 @@ organization := "io.shaka"
 
 version := Try(sys.env("LIB_VERSION")).getOrElse("SNAPSHOT-1")
 
-//addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.3")
-
 pgpPassphrase := Some(Try(sys.env("SECRET")).getOrElse("goaway").toCharArray)
 
 pgpSecretRing := file("./publish/sonatype.asc")
